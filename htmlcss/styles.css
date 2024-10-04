@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', serif;
+    color: #333;
+    background-color: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed; /* 固定位置 */
+    top: 0; /* 顶端 */
+    left: 0; /* 左侧 */
+    width: 100%; /* 宽度为100% */
+    z-index: 1000; /* 确保在其他元素上方 */
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #efefef;
+}
+
+.logo {
+    width: 60px;
+    margin-right: 20px;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 垂直居中 */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+    display: flex;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-family: "Helvetica", serif;
+    font-weight: 700; /* 可以根据需要设置不同的权重值 */
+    font-size: 10px;
+    position: relative; /* 确保伪元素定位正确 */
+}
+
+/* 悬停和点击后的下划线效果 */
+nav ul li a::after,
+.series-nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #333;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    transform: scaleX(0);
+}
+
+
+/* 悬停效果 */
+nav ul li a:hover::after,
+nav ul li a.hovered::after,
+.series-nav ul li a:hover::after,
+.series-nav ul li a.hovered::after {
+    background-color: #333;
+    transform: scaleX(1);
+}
+
+/* 点击后保持下划线 */
+nav ul li a.clicked::after,
+.series-nav ul li a.active::after {
+    background-color: #333;
+    transform: scaleX(1);
+}
+
+main {
+    padding: 50px;
+}
+
+.series-nav {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #efefef; /* 添加底部边框 */
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    left: 0; /* 左侧 */
+    top: 10px; /* 确保在 header 下面 */
+    height: 50px;
+}
+
+.series-nav ul {
+    padding-left: 75px;
+    position: relative; /* 相对定位 */
+    top: 15px; /* 向下偏移 */
+    left: 5px;
+}
+
+.series-nav ul li a {
+    position: relative;
+    text-decoration: none; /* 确保没有默认下划线 */
+}
+
+nav ul li a:hover::after,
+.series-nav ul li a:hover::after {
+    width: 100%;
+    transform: scaleX(1);
+}
+
+nav ul li a.clicked::after,
+.series-nav ul li a.active::after {
+    width: 100%;
+    transform: scaleX(1);
+}
+
+/* 悬停状态下的链接 */
+.series-nav ul li a:hover,
+.series-nav ul li a.active {
+    border-bottom: none
+}
+
+/* 点击后 active 类的伪元素 */
+.series-nav ul li a.active::after {
+    width: 100%;
+}
+
+h2 {
+    color: #333;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-left: 0;
+    display: flex;
+}
+
+h2::before {
+    content: '|'; /* 符号可以根据需求修改 */
+    margin-right: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 170px;
+}
+
+.gallery-item {
+    width: calc(25% - 10px);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gallery-item a {
+    text-decoration: none; /* 确保移除下划线 */
+}
+
+.gallery-item img {
+    display: flex;
+    width: 150%; /* 图片宽度 */
+    height: auto; /* 固定高度 */
+    object-fit: cover; /* 图片裁剪 */
+    display: block;
+    transition: filter 0.3s ease; /* 黑白转换的过渡效果 */
+}
+
+/* 修改为 100% 宽度 */
+.gallery-item:hover img {
+    filter: contrast(0.7); /* 调整对比度的值，0.7为示例值 */
+}
+
+.gallery-item h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+    text-align: left;
+    color: #333;
+    font-family: 'Helvetica';
+}
+
+.gallery-item p {
+    font-family: 'Helvetica';
+    font-size: 14px;
+    margin: 0;
+    text-align: left;
+    color: #333;
+}
+
+footer {
+    position: sticky; /* 或者 sticky，取决于您的需求 */
+    height: 12px; /* 调整高度以满足您的需求 */
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    display: flex; /* 使用 Flexbox */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+    font-size: 8px;
+    font-weight: 400;
+    padding: 0; /* 移除 padding 确保内容完全居中 */
+    padding-bottom: 0px;
+}
+
+/* Overlay 样式 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    pointer-events: none;
+}
+
+/* Slideshow CSS */
+.slideshow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mySlides {
+    width: 75%; /* 或者根据需要设置固定宽度 */
+    text-align: center; /* 如果图片宽度小于容器宽度，可以使用 text-align:center; 让图片水平居中 */
+    padding: 15px;
+}
+
+.mySlides img {
+    width: 100%;
+    height: auto;
+}
+
+.fade {
+    animation: fadeEffect 2s ease-out ;
+}
+
+@keyframes fadeEffect {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+/* 视频模态框样式 */
+.modal {
+    display: none; /* 初始隐藏模态框 */
+    position: fixed; /* 固定位置 */
+    top: 50%;
+    left: 50%;
+    width: 70vw;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7); /* 黑色背景，透明度 70% */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 确保模态框在其他内容之上 */
+    overflow: hidden;
+   
+    
+}
+
+.modal-content {
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal video {
+    width: 100%; /* 视频宽度自适应 */
+    height: auto; /* 保持视频的纵横比 */
+}
+
+.modal .video-description {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #ffffff; /* 描述文字颜色 */
+    text-align: left;
+    margin-left: 10px;
+    font-family:Arial, Helvetica, sans-serif
+
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw; /* 占页面宽度的70% */
+    max-width: 1000px;
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.modal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 黑色透明背景 */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 10; /* 确保文字内容在最上层 */
+    border-radius: 0
+}
+
+.modal-header h3 {
+    margin-bottom: 2px;
+    
+}
+
+.modal-header h3,
+.modal-header p {
+    margin: 0px;
+    font-size: 10px; /* 控制字体大小 */
+}
+
+.modal video {
+    width: 100%; /* 确保视频占满容器 */
+    height: auto;
+    display: block;
+}
+
+.modal-description {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1em;
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* 半透明黑色背景覆盖全屏 */
+    padding: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* 隐藏溢出 */
+    
+}

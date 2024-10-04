@@ -1,0 +1,252 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+
+/* Reset styles */
+html, body {
+    height:100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 禁止横向滚动 */
+    overflow-y: auto; /* 允许垂直滚动 */
+}
+
+body {
+    font-family: 'Helvetica', sans-serif; /* 使用 Helvetica 字体 */
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    width: 60px;
+    margin-right: 20px;
+}
+
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    position: relative; /* 相对定位，让伪元素基于 a 元素定位 */
+    text-decoration: none;
+    font-family: "Helvetica", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    padding-bottom: 5px; /* 为下划线留出空间 */
+    color: rgb(58, 58, 58);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px; /* 下划线的高度 */
+    background-color: #333; /* 下划线的颜色 */
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease-in-out; /* 添加过渡效果 */
+    transform: scaleX(0);
+    transform-origin: bottom left;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    transform: scaleX(1); /* 悬停时展开下划线 */
+}
+
+nav ul li a.clicked::after, 
+nav ul li a.active::after {
+    width: 100%;
+    transform: scaleX(1); /* 点击时保持下划线 */
+}
+
+
+/* 确保图片容器居中 */
+a {
+display: block;
+text-align: center;
+}
+
+/* 确保图片在容器中居中 */
+a img {
+display:inline-block;
+max-width: 100%; /* 使图片适应容器宽度 */
+height: auto; /* 保持图片的纵横比 */
+}
+
+/* Main content styles */
+main {
+position: relative;
+margin-top: -10px;
+}
+
+.image-container-1 {
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center; /* 使 container 和内容水平居中 */
+justify-content: center; /* 使 container 和内容垂直居中 */
+margin-top: 150px; /* 只影响图片上方的间距，不影响导航栏 */
+animation: fadeInUp 1.5s ease-out; /* 1.5秒淡入动画 */
+text-align: center;
+font-family: "Helvetica", sans-serif;
+font-weight: 700;
+font-size: 10px;
+height: auto; /* 根据内容自动调整高度 */
+overflow: visible; /* 确保内容不会被裁剪 */
+padding-top: 20px;
+}
+
+.image-container-1 a {
+text-decoration: none; /* 去除下划线 */
+color: inherit; /* 继承父元素的字体颜色 */
+margin-top: 10px;
+}
+
+.image-container-1 img {
+display: block;
+margin: 0 auto; /* 水平居中图片 */
+max-width: 100%; /* 图片宽度不超过 container */
+height: auto; /* 保持图片的纵横比 */
+width: 75%;
+}
+
+.big-title
+{
+text-decoration: none; /* 去除下划线 */
+color: inherit; /* 继承父元素的字体颜色 */
+font-size: 15px;
+margin-top: 0;
+}
+
+.small-title
+{
+display: block;
+text-decoration: none; /* 去除下划线 */
+color: inherit; /* 继承父元素的字体颜色 */
+margin-top: -10px;
+margin-bottom: 30px;
+font-size: 12px;
+}
+
+.small-text
+{
+display: block;
+text-decoration: none; /* 去除下划线 */
+color: inherit; /* 继承父元素的字体颜色 */
+margin-top: 5px;
+font-size: 10px;
+
+}
+
+.video-container {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中，如果容器有固定高度 */
+    width: 60%; /* 视频容器的宽度设为页面宽度的80% */
+    margin-bottom: 30px;
+}
+
+.video-container video {
+    width: 80%; /* 确保视频占满容器的宽度 */
+    height: auto; /* 保持视频的纵横比 */
+}
+
+
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(30px); /* 从30px的下方开始 */
+}
+to {
+opacity: 1;
+transform: translateY(0); /* 逐渐移动到原始位置 */
+}
+}
+
+a.image-link {
+display: block;
+text-align: center;
+margin-top: 150px; /* 上间距，调整此值以增减距离 */
+margin-bottom: 20px; /* 下间距，调整此值以增减距离 */
+}
+
+.navigation {
+margin-bottom: 20px; /* 根据需要调整 */
+}
+
+.staff-text
+{
+    text-decoration: none; /* 去除下划线 */
+    color: inherit; /* 继承父元素的字体颜色 */
+    margin-top: 30px;
+    font-size: 10px;
+    margin: 1px;
+    }
+
+.back-link
+{
+    font-size: 10px;
+    text-decoration: none; /* 去掉下划线 */
+    color: #007BFF; /* 设置链接颜色 */
+    transition: color 0.3s ease; /* 鼠标悬停时颜色过渡效果 */
+}
+
+.back-link:hover {
+color: #0056b3; /* 鼠标悬停时的颜色 */
+}
+
+
+
+/* Footer styles */
+footer {
+position: fixed;
+height: 12px;
+bottom: 0;
+left: 0;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #f8f8f8;
+border-top: 1px solid #ddd;
+font-size: 8px;
+font-weight: 400;
+padding: 0;
+padding-bottom: 0px;
+}
+
+

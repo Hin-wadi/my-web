@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WADi</title>
+    <link rel="stylesheet" href="Beneunder 48H.css">
+ 
+</head>
+<body>
+    <header>
+        <a href="index3.html"><img src="images/wadi-head.png" alt="Logo" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="FILMS.html">FILMS</a></li>
+                <li><a href="ART.html">ART</a></li>
+                <li><a href="music.html">MUSIC</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+<body>
+
+<main>
+    <div class="image-container-1">
+        <p class="big-title">BENEUNDER 48HOUR ESCAPE PROJECT</p>
+        <p class="small-title" style="margin-bottom: 80px;">蕉下&nbsp;| 48小时逃离计划</p>
+            <video class="video-container video" controls>
+                <source src="FILMS/从化MRS皮划艇/从化MRS皮划艇-横屏.mp4" type="video/mp4">
+                
+            </video>
+            <p class="staff-text" style="margin-top: 50px;">剪辑/Editor:Hin</p>
+
+
+            <a href="javascript:void(0)" onclick="history.back()" class="back-link" style="margin-top: 80px;margin-bottom: 80px;">Back</a>
+        </div>
+        
+        </div>
+        
+
+        </main>
+        
+
+
+<footer>
+&copy; 2024 WADi
+</footer>
+
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll('.mySlides');
+const totalSlides = slides.length;
+
+function showSlides() {
+// Remove 'fade' class from all slides
+slides.forEach(slide => slide.classList.remove('fade'));
+// Update the slideIndex
+slideIndex = (slideIndex + 1) % totalSlides;
+
+// Add 'fade' class to the current slide
+slides[slideIndex].classList.add('fade');
+
+// Bring the current slide to the top
+slides.forEach((slide, index) => {
+if (index === slideIndex) {
+slide.style.zIndex = 1;
+slide.style.display = 'block'; // Ensure it is visible
+} else {
+slide.style.zIndex = 0;
+slide.style.display = 'none'; // Ensure it is hidden
+}
+});
+// Show next slide after the animation completes
+setTimeout(showSlides, 4000); // Delay for display time
+}
+
+// Initialize the slideshow
+window.onload = function() {
+slides[slideIndex].style.display = 'block'; // Display the first slide
+slides[slideIndex].classList.add('fade'); // Start with fade animation
+showSlides();
+};
+</script>
+</body>
+</html>
