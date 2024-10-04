@@ -1,0 +1,357 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+
+/* Reset styles */
+html, body {
+    height:280%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 禁止横向滚动 */
+    overflow-y: auto; /* 允许垂直滚动 */
+}
+
+body {
+    font-family: 'Helvetica', sans-serif; /* 使用 Helvetica 字体 */
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    width: 60px;
+    margin-right: 20px;
+}
+
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    position: relative; /* 相对定位，让伪元素基于 a 元素定位 */
+    text-decoration: none;
+    font-family: "Helvetica", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    padding-bottom: 5px; /* 为下划线留出空间 */
+    color: rgb(58, 58, 58);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px; /* 下划线的高度 */
+    background-color: #333; /* 下划线的颜色 */
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease-in-out; /* 添加过渡效果 */
+    transform: scaleX(0);
+    transform-origin: bottom left;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    transform: scaleX(1); /* 悬停时展开下划线 */
+}
+
+nav ul li a.clicked::after, 
+nav ul li a.active::after {
+    width: 100%;
+    transform: scaleX(1); /* 点击时保持下划线 */
+}
+
+
+/* 确保图片容器居中 */
+a {
+    display: block;
+    text-align: center;
+}
+
+/* 确保图片在容器中居中 */
+a img {
+    display:inline-block;
+    max-width: 100%; /* 使图片适应容器宽度 */
+    height: auto;    /* 保持图片的纵横比 */
+}
+
+
+/* Main content styles */
+main {
+    padding: 0; /* 去掉之前的 padding 设置 */
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.box {
+    width: 18%;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+}
+
+.box p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.table-container {
+    display: flex;
+    flex-wrap: wrap; /* 允许元素换行 */
+    justify-content: space-between; /* 元素之间均匀分布 */
+    gap: 0; /* 让单元格之间没有间距 */
+    width: 100%; /* 容器占据全部宽度 */
+    margin-top: 100px;
+    
+}
+
+.table-container a {
+    text-decoration: none; /* 去掉下划线 */
+    color: inherit; /* 继承父元素的字体颜色 */
+}
+
+.table {
+    flex: 1 1 calc(20%); /* 每行5个单元格，均分宽度 */
+    max-width: calc(20%); /* 控制单元格的最大宽度 */
+    border: 0.5px solid rgb(147, 147, 147);
+    background: #fff;
+    text-align: center;
+    padding: 0; /* 取消内边距 */
+    box-sizing: border-box;
+    position: relative;
+    height: 550px; /* 设置表格的高度，按需调整 */
+    overflow: hidden; /* 隐藏超出的内容 */
+}
+
+.table img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .table {
+        flex: 1 1 calc(50% - 10px); /* 适应较小屏幕的两列布局 */
+        max-width: calc(50% - 10px);
+    }
+}
+
+.small-title{
+    font-family: "Helvetica", sans-serif;
+    font-size: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 1000;
+}
+
+.big-title{
+    font-family: "Helvetica", sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 500;
+    max-width: 100%; /* 你可以根据需要调整这个值，控制文字换行的宽度 */
+    word-wrap: break-word; /* 保证长单词在超出宽度时换行 */
+}
+
+.small-text{
+    display: block;
+    font-family: "Helvetica", sans-serif;
+    font-size: 10px;
+    text-align: center;
+    font-weight: 580;
+    
+}
+
+.creator-text {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+    font-size: 10px;
+    text-align: center;
+    font-weight: 580;
+}
+
+/* Footer styles */
+footer {
+    position: fixed;
+    height: 12px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+    font-size: 8px;
+    font-weight: 400;
+    padding: 0;
+    padding-bottom: 0px;
+}
+
+
+.back-link
+{
+    
+    font-size: 10px;
+    text-decoration: none; /* 去掉下划线 */
+    color: #000000; /* 设置链接颜色 */
+    font-weight: 1000;
+    transition: color 0.3s ease; /* 鼠标悬停时颜色过渡效果 */
+    animation: fadeInUp 1.5s ease-out; /* 1.5秒淡入动画 */
+    margin-top: 40px;
+    text-align: center;
+    padding: 5px 10px; /* 增加内边距，使椭圆圈更明显 */
+    display: flex; /* 让元素根据内容大小调整自身宽度 */
+    justify-content: center; /* 垂直居中 */
+    margin: 200px auto; /* 自动左右边距使容器水平居中 */
+    width: 1000px;
+    line-height: 1;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* 从30px的下方开始 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 逐渐移动到原始位置 */
+    }
+}
+
+
+
+/* Thumbnail Image */
+.thumbnail {
+    display: block;
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+    transition: 0.3s;
+}
+
+.thumbnail:hover {
+    filter: grayscale(100%); /* Gray out image on hover */
+}
+
+.thumbnail:hover + .overlay {
+    opacity: 1;
+}
+
+/* Overlay with Zoom Icon */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.zoom-icon {
+    color: white;
+    font-size: 24px;
+}
+
+
+.popup-link {
+    position: relative;
+    display: inline-block;
+    cursor: pointer; /* 手型指针，表示可点击 */
+}
+
+
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* 初始隐藏 */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 确保弹出窗口在最前方 */
+}
+
+.popup-link:hover .overlay {
+    opacity: 1; /* 悬停时显示放大图标的背景 */
+}
+
+ /* Popup Content */
+ .popup-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.popup-content img {
+    height:600px;
+    display: block;
+    
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+}
