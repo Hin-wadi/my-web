@@ -47,7 +47,7 @@
 
 
 
-            <a href="javascript:void(0)" onclick="history.back()" class="back-link" style="margin-top: 80px;margin-bottom: 80px;">Back</a>        </div>
+<a href="/index.html" onclick="if (document.referrer.indexOf(window.location.hostname) !== -1) { history.back(); return false; }" class="back-link" style="margin-top: 80px;margin-bottom: 80px;">Back</a>
         
 
         </main>
