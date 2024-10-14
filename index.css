@@ -1,87 +1,91 @@
-/* Reset styles */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
+/* 初始样式，适用于较大屏幕 */
 body {
-    font-family: 'Helvetica', sans-serif;
-    color: #333;
-    background-color: #fff;
-}
-
-/* Header styles */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff; /* 添加背景颜色 */
-}
-
-.logo {
-    width: 60px;
-    margin-right: 20px;
-}
-
-/* 修改导航栏样式 */
-nav ul {
-    list-style: none;
-    display: flex;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    font-size: 10px;
-    padding-bottom: 5px;
-    color: rgb(58, 58, 58);
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    background-color: #333;
-    left: 0;
-    bottom: 0;
-    transition: width 0.3s ease-in-out;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-/* 图片容器居中 */
-.image-container-1, .image-container-0 {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-container-1 img, .image-container-0 img {
+/* 全局图片样式 */
+img {
     max-width: 100%;
     height: auto;
 }
 
-/* 其他小调整 */
-.mini-title {
-    font-size: 10px;
-    border: 1px solid #333;
+/* 图片容器居中 */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.small-text {
-    font-size: 12px;
+/* 初始大字排版容器样式 */
+.image-container-0 {
     text-align: center;
+    margin: 50px 0;
+    padding: 20px;
+}
+
+/* 大字排版的标题样式 */
+.image-title-1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.image-title-2 {
+    font-size: 40px;
+    margin: 0;
+}
+
+/* 默认图片样式 */
+.thumbnail {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+/* 图片悬停变换效果（仅针对特定图片） */
+.thumbnail:hover {
+    content: url('new-image.jpg');
+}
+
+/* 响应式布局 */
+/* 屏幕宽度小于1200px时，缩小到90% */
+@media (max-width: 1200px) {
+    .image-container-0 {
+        transform: scale(0.9);
+        transform-origin: top center;
+    }
+}
+
+/* 屏幕宽度小于1000px时，缩小到80% */
+@media (max-width: 1000px) {
+    .image-container-0 {
+        transform: scale(0.8);
+        transform-origin: top center;
+    }
+}
+
+/* 屏幕宽度小于800px时，缩小到70% */
+@media (max-width: 800px) {
+    .image-container-0 {
+        transform: scale(0.7);
+        transform-origin: top center;
+    }
+}
+
+/* 屏幕宽度小于600px时，缩小到60% */
+@media (max-width: 600px) {
+    .image-container-0 {
+        transform: scale(0.6);
+        transform-origin: top center;
+    }
+}
+
+/* 屏幕宽度小于400px时，缩小到50% */
+@media (max-width: 400px) {
+    .image-container-0 {
+        transform: scale(0.5);
+        transform-origin: top center;
+    }
 }
