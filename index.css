@@ -177,27 +177,24 @@ main {
 }
 
 .image-container-2 {
-    display: inline-block;
-    justify-content: center; /* 水平居中内容 */
-    flex-direction: column; /* 使内容在垂直方向上排列 */
-    align-items: center; /* 垂直居中内容 */
-    margin-top: 200px; /* 只影响图片上方的间距，不影响导航栏 */
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 垂直排列内容 */
+    align-items: center; /* 水平居中内容 */
+    margin-top: 200px; /* 控制顶部间距 */
     margin-left: 170px;
     animation: fadeInUp 1.5s ease-out;
     text-align: center;
     font-family: "Helvetica", sans-serif;
     width: 75%; /* 根据需要调整宽度 */
-    flex-direction: column;
 }
 
 .image-container-2 img {
-    display: block; /* 使每个图片占据独立的行，避免间隙 */
-    float:inline-start; /* 图片并排 */
+    display: block; /* 使每个图片占据独立的行 */
     height: 200px; 
     width: auto;
-    align-items:start;
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* 图片之间的间距 */
 }
+
 
 .image-title-1
 {
