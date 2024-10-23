@@ -126,13 +126,6 @@ main {
     width:80%
 }
 
-.image-container-0 a {
-    display: inline-block;
-    text-decoration: none; /* 去除下划线 */
-    color: inherit; /* 继承父元素的字体颜色 */
-    margin-top: 10px;
-    text-align: center;
-}
 
 .image-container-1 {
     display: inline-block;
