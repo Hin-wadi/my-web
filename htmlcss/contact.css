@@ -133,11 +133,18 @@ main {
     margin-top: 200px; /* 只影响图片上方的间距，不影响导航栏 */
     margin-left: 150px;
     animation: fadeInUp 1s ease-out; /* 1.5秒淡入动画 */
-    text-align: left;
     font-family: "Helvetica", sans-serif;
     font-weight: 700;
     font-size: 10px;
-    width:80%;
+    width:80%
+}
+
+.image-container-0 a {
+    display: inline-block;
+    text-decoration: none; /* 去除下划线 */
+    color: inherit; /* 继承父元素的字体颜色 */
+    margin-top: 10px;
+    text-align: left;
 }
 
 .image-container-1 a {
