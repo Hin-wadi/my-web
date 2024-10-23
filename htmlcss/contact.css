@@ -3,7 +3,7 @@
 
 /* Reset styles */
 html, body {
-    height:130%;
+    height:100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* 禁止横向滚动 */
@@ -11,9 +11,13 @@ html, body {
 }
 
 body {
-    font-family: 'Helvetica', sans-serif; /* 使用 Helvetica 字体 */
-    color: #333;
-    background-color: #fff;
+    display: flex;
+    justify-content: center; /* 将页面中的内容水平居中 */
+    align-items: flex-start; /* 从页面顶部开始排列 */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* 确保页面占满浏览器高度 */
+    flex-direction: column; /* 纵向排列内容 */
 }
 
 /* Header styles */
@@ -114,16 +118,17 @@ main {
 
 
 .image-container-0 {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    align-items: center; /* 使 container 和内容水平居中 */
-    justify-content: center; /* 使 container 和内容垂直居中 */
-    margin-top: 100px; /* 只影响图片上方的间距，不影响导航栏 */
-    animation: fadeInUp 1s ease-out; /* 1.5秒淡入动画 */
+    align-items: center; /* 水平居中内容 */
+    justify-content: center; /* 垂直居中内容 */
+    margin: 100px auto; /* 设置上下间距，并确保 container 居中 */
+    animation: fadeInUp 1s ease-out; /* 1秒淡入动画 */
     font-family: "Helvetica", sans-serif;
     font-weight: 700;
     font-size: 10px;
-    width:80%
+    width: 80%; /* 设置宽度 */
+    text-align: center; /* 确保文本内容居中 */
 }
 
 
