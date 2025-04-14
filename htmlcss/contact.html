@@ -3,30 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>联系我</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>WADi</title>
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
     <header>
-        <img src="images/logo@2x.png" alt="Logo" class="logo">
+        <a href="../index.html"><img src="../images/wadi-head.png" alt="Logo" class="logo"></a>
         <nav>
             <ul>
-                <li><a href="video.html">视频作品</a></li>
-                <li><a href="design.html">设计作品</a></li>
-                <li><a href="painting.html">绘画作品</a></li>
-                <li><a href="music.html">音乐</a></li>
-                <li><a href="contact.html">联系我</a></li>
+                <li><a href="../htmlcss/FILMS.html">FILMS</a></li>
+                <li><a href="../htmlcss/ART.html">ART</a></li>
+                <li><a href="../htmlcss/contact.html">CONTACT</a></li>
             </ul>
         </nav>
     </header>
-    
-    <main>
-        <h2>联系我</h2>
-        <p>这里是联系我的信息。</p>
-    </main>
-    
-    <footer>
-        &copy; 2024 My Portfolio
+
+    <div class="image-container-0">
+    <p class="small-text">Hi！</p>
+<p class="small-text">My name is Qian,you can call me Hin,aka WADi.</p>
+<p class="small-text">I am an innovator who loves the film and television industry.</p>
+<p class="small-text">Have good organizational skills and director awareness for film and television projects, familiar with a series of processes such as commercial advertising production and preparation.</p>
+<p class="small-text">Familiar with brand promotion, channel operation, team management, photography skills, etc.</p>
+<p class="small-text">In addition, I enjoy painting and have a certain foundation in it. I usually do it through Procreat, which can provide original services and accumulate some works. If needed, I can also come and exchange ideas.</p>
+<p class="small-text" style="margin-top:50px">417202454@qq.com</p>
+    </div>
+
+
+  
+      <footer>
+        &copy; 2025 WADi
     </footer>
+
+    <script src="scripts.js"></script>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.mySlides');
+        const totalSlides = slides.length;
+
+        function showSlides() {
+            slides.forEach(slide => slide.classList.remove('fade'));
+            slideIndex = (slideIndex + 1) % totalSlides;
+            slides[slideIndex].classList.add('fade');
+            slides.forEach((slide, index) => {
+                if (index === slideIndex) {
+                    slide.style.zIndex = 1;
+                    slide.style.display = 'block';
+                } else {
+                    slide.style.zIndex = 0;
+                    slide.style.display = 'none';
+                }
+            });
+            setTimeout(showSlides, 4000);
+        }
+
+        window.onload = function() {
+            slides[slideIndex].style.display = 'block';
+            slides[slideIndex].classList.add('fade');
+            showSlides();
+        };
+
+        function saveScrollPosition() {
+            const scrollPosY = window.scrollY;
+            history.pushState({ scrollPosition: scrollPosY }, null, null);
+        }
+
+        window.addEventListener('popstate', function(event) {
+            if (event.state && event.state.scrollPosition !== undefined) {
+                window.scrollTo(0, event.state.scrollPosition);
+            }
+        });
+    </script>
 </body>
 </html>
