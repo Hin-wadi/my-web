@@ -182,7 +182,7 @@ font-size: 10px;
 }
 
 .video-container video {
-    width: 80%; /* 确保视频占满容器的宽度 */
+    width: 30%; /* 确保视频占满容器的宽度 */
     height: auto; /* 保持视频的纵横比 */
 }
 
