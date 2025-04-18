@@ -177,7 +177,7 @@ font-size: 10px;
     margin-top: 30px;
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中，如果容器有固定高度 */
-    width: 60%; /* 视频容器的宽度设为页面宽度的80% */
+    width: 30%; /* 视频容器的宽度设为页面宽度的80% */
     margin-bottom: 30px;
 }
 
