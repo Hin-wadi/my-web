@@ -181,7 +181,7 @@ font-size: 10px;
     margin-bottom: 30px;
 }
 
-.video-container video {
+.video-container.video {
     width: 30%; /* 确保视频占满容器的宽度 */
     height: auto; /* 保持视频的纵横比 */
 }
